@@ -51,13 +51,13 @@ steps:
     note: "Person phải là cột kiểu Person trong Base. Cột Họ Tên kiểu Text chỉ chứa chữ, không đại diện cho tài khoản Lark để duyệt."
   - title: "Thêm các trường còn lại của mẫu"
     action: "Tiếp tục bấm Add để chọn từng trường cần đưa vào biểu mẫu."
-    value: "Chức vụ\nPhòng ban\nTrưởng bộ phận\nktt\nTổng Giám Đốc"
+    value: "Chức vụ\nPhòng ban\nTrưởng bộ phận\nKế Toán Trường\nTổng Giám Đốc"
     result: "Danh sách có sáu trường như ảnh. Các trường xuất hiện cùng nhóm trong biểu mẫu."
     image: "ket-noi-base/reference-fields.webp"
     imageWidth: 350
     imageHeight: 320
     alt: "Danh sách trường tham chiếu trong mẫu gồm Person, Chức vụ, Phòng ban, Trưởng bộ phận, ktt và Tổng Giám Đốc"
-    note: "ktt là Kế toán trưởng. Base công ty còn cần Ban kiểm soát và Chủ tịch theo bài 01; mẫu kết nối đang tham chiếu sáu trường như ảnh. Các cột tài khoản chưa tự trở thành cấp duyệt. Việc chọn người duyệt được làm ở Process Design."
+    note: "Chọn cột Kế Toán Trường trong Base của bạn. Ảnh mẫu cũ hiển thị tên viết tắt ktt. Base công ty còn cần Ban kiểm soát và Chủ tịch theo bài 01; mẫu kết nối đang tham chiếu sáu trường như ảnh. Các cột tài khoản chưa tự trở thành cấp duyệt. Việc chọn người duyệt được làm ở Process Design."
   - title: "Hiểu phạm vi All data — Tất cả dữ liệu"
     action: "Đọc mục Submitter can select data from — Người gửi có thể chọn dữ liệu từ. Để làm theo cấu hình mẫu, chọn All data."
     value: "All data"
@@ -158,6 +158,8 @@ faqs:
   - question: "Bản hướng dẫn này đã chạy thử quy trình thật chưa?"
     answer: "Chưa. Cấu hình và nút được khảo sát trong giao diện thật ngày 01/10/2026. Chưa Publish, chưa gửi đơn thử và chưa xác nhận thông báo tới người duyệt."
 changes:
+  - date: "2026-10-01"
+    text: "Dùng tên đầy đủ Kế Toán Trường trong hướng dẫn kết nối; ghi rõ ảnh cấu hình mẫu cũ vẫn hiển thị ktt."
   - date: "2026-10-01"
     text: "Chuyển thành bài 02, thêm liên kết bài thiết lập Base 10 cột. Làm rõ Ban kiểm soát và Chủ tịch bắt buộc trong Base nhưng chưa dùng làm cấp duyệt trong mẫu một bước hiện tại."
   - date: "2026-10-01"

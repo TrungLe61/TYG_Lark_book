@@ -5,7 +5,7 @@ description: "Tạo đủ 10 cột và chọn đúng tài khoản Lark cho nhân
 order: 1
 updated: "2026-10-01"
 verified: "2026-10-01"
-keywords: ["tạo Base","nhân viên","Họ Tên","Person","Text","tài khoản","account","Trưởng bộ phận","ktt","Kế toán trưởng","Tổng Giám Đốc","Ban kiểm soát","Chủ tịch","nhiều thành viên","cột","column","Search for members","Send a notification"]
+keywords: ["tạo Base","nhân viên","Họ Tên","Person","Text","tài khoản","account","Trưởng bộ phận","Kế Toán Trường","ktt","Tổng Giám Đốc","Ban kiểm soát","Chủ tịch","nhiều thành viên","cột","column","Search for members","Send a notification"]
 steps:
   - title: "Mở New — Tạo mới và chọn Base"
     action: "Trong Lark Docs, mở Home — Trang chủ. Bấm New — Tạo mới (khung 1), rồi bấm Base (khung 2)."
@@ -102,15 +102,15 @@ steps:
     alt: "Ảnh thật trong Lark, khung đỏ chỉ vị trí thao tác: Tạo cột Trưởng bộ phận bằng Person"
     value: "Field title: Trưởng bộ phận\nField type: Person"
     note: "Cột này chứa tài khoản người phụ trách trực tiếp của từng nhân viên. Đừng tạo kiểu Text rồi gõ tên người phụ trách."
-  - title: "Tạo cột ktt bằng Person"
-    action: "Bấm dấu +. Nhập ktt ở Field title (khung 1). Chọn Person ở Field type (khung 2), rồi bấm Confirm (khung 3)."
-    result: "Có cột ktt với biểu tượng hình người."
+  - title: "Tạo cột Kế Toán Trường bằng Person"
+    action: "Bấm dấu +. Nhập Kế Toán Trường ở Field title (khung 1). Chọn Person ở Field type (khung 2), rồi bấm Confirm (khung 3)."
+    result: "Có cột Kế Toán Trường với biểu tượng hình người."
     image: "thiet-lap-base/accountant-field.webp"
     imageWidth: 340
     imageHeight: 490
-    alt: "Ảnh thật trong Lark, khung đỏ chỉ vị trí thao tác: Tạo cột ktt bằng Person"
-    value: "Field title: ktt\nField type: Person"
-    note: "ktt là Kế toán trưởng. Giữ đúng tên ktt để khớp bài kết nối và mẫu hiện tại."
+    alt: "Ảnh thật trong Lark, khung đỏ chỉ vị trí thao tác: Tạo cột Kế Toán Trường bằng Person"
+    value: "Field title: Kế Toán Trường\nField type: Person"
+    note: "Dùng tên đầy đủ Kế Toán Trường cho dễ hiểu. Cột này phải là Person để chọn tài khoản người phụ trách."
   - title: "Tạo cột Tổng Giám Đốc bằng Person"
     action: "Bấm dấu +. Nhập Tổng Giám Đốc ở Field title (khung 1). Chọn Person ở Field type (khung 2), rồi bấm Confirm (khung 3)."
     result: "Có cột Tổng Giám Đốc với biểu tượng hình người."
@@ -138,7 +138,7 @@ steps:
     value: "Field title: Chủ tịch\nField type: Person"
     note: "Chủ tịch là cột bắt buộc cho các công ty TYG. Chọn tài khoản Chủ tịch áp dụng cho công ty của nhân viên."
   - title: "Kiểm tra các cột nhân viên và cấp phụ trách"
-    action: "Đối chiếu hàng tiêu đề với bảng 10 cột ở đầu bài. Person, Trưởng bộ phận, ktt và Tổng Giám Đốc phải có biểu tượng hình người."
+    action: "Đối chiếu hàng tiêu đề với bảng 10 cột ở đầu bài. Person, Trưởng bộ phận, Kế Toán Trường và Tổng Giám Đốc phải có biểu tượng hình người."
     result: "Họ Tên, Chức vụ, Phòng ban là chữ; các cột tài khoản là Person."
     image: "thiet-lap-base/columns-left.webp"
     imageWidth: 1444
@@ -229,14 +229,14 @@ steps:
     alt: "Ảnh thật trong Lark, khung đỏ chỉ vị trí thao tác: Chọn Trưởng bộ phận A cho X"
     value: "A = người phụ trách trực tiếp của X"
     note: "Chọn A theo quan hệ phụ trách đã được công ty xác nhận. Không tự điền X vào cột này, cũng không mặc định lấy người tạo Base."
-  - title: "Chọn Kế toán trưởng B cho X"
-    action: "Trên dòng của X, bấm đúp ô ktt (khung 1). Tìm và chọn tài khoản Kế toán trưởng B của công ty (khung 2)."
-    result: "Ô ktt trên dòng X chứa tài khoản B."
+  - title: "Chọn Kế Toán Trường B cho X"
+    action: "Trên dòng của X, bấm đúp ô Kế Toán Trường (khung 1). Tìm và chọn tài khoản Kế Toán Trường B của công ty (khung 2)."
+    result: "Ô Kế Toán Trường trên dòng X chứa tài khoản B."
     image: "thiet-lap-base/accountant-picker.webp"
     imageWidth: 305
     imageHeight: 116
-    alt: "Ảnh thật trong Lark, khung đỏ chỉ vị trí thao tác: Chọn Kế toán trưởng B cho X"
-    value: "B = Kế toán trưởng áp dụng cho X"
+    alt: "Ảnh thật trong Lark, khung đỏ chỉ vị trí thao tác: Chọn Kế Toán Trường B cho X"
+    value: "B = Kế Toán Trường áp dụng cho X"
   - title: "Chọn Tổng giám đốc C cho X"
     action: "Trên dòng của X, bấm đúp ô Tổng Giám Đốc (khung 1). Tìm và chọn tài khoản Tổng giám đốc C của công ty (khung 2)."
     result: "Ô Tổng Giám Đốc trên dòng X chứa tài khoản C."
@@ -272,7 +272,7 @@ steps:
     alt: "Ảnh thật trong Lark, khung đỏ chỉ vị trí thao tác: Thêm từng nhân viên còn lại"
     note: "A/B/C/D/E cũng là nhân sự thì vẫn có dòng riêng của họ. Tuyến phụ trách của họ phải theo danh sách công ty xác nhận; không suy ra từ ví dụ của X. Chỉ dùng chung người phụ trách khi thực tế đã xác nhận giống nhau."
   - title: "Kiểm tra trước khi kết nối Approval"
-    action: "Đối chiếu từng dòng với danh sách nhân sự đã xác nhận: Person đúng nhân viên; Trưởng bộ phận, ktt, Tổng Giám Đốc, Ban kiểm soát và Chủ tịch đúng tài khoản. Kiểm tra Lark báo Saved to cloud."
+    action: "Đối chiếu từng dòng với danh sách nhân sự đã xác nhận: Person đúng nhân viên; Trưởng bộ phận, Kế Toán Trường, Tổng Giám Đốc, Ban kiểm soát và Chủ tịch đúng tài khoản. Kiểm tra Lark báo Saved to cloud."
     result: "Base của công ty có đủ 10 cột và dữ liệu tài khoản đã được kiểm tra. Có thể sang bài Kết nối Base với Approval."
     image: "thiet-lap-base/columns-right.webp"
     imageWidth: 557
@@ -292,11 +292,13 @@ faqs:
     answer: "Bấm đúp tiêu đề Ban kiểm soát. Kiểm tra Field type là Person và bật Allow adding multiple members in one record, rồi Confirm. Sau đó chọn lại đủ các thành viên đã được công ty xác nhận."
   - question: "Có thể ghi chữ “Ban kiểm soát” hoặc “Chủ tịch” vào ô không?"
     answer: "Không dùng chữ thay cho tài khoản. Ban kiểm soát cần các tài khoản thành viên D1, D2…; Chủ tịch cần tài khoản E. Hai cột này dùng Person và là cột bắt buộc trong Base công ty theo yêu cầu TYG."
-  - question: "Các nhân viên cùng công ty có thể dùng cùng ktt, Tổng giám đốc, Ban kiểm soát và Chủ tịch?"
+  - question: "Các nhân viên cùng công ty có thể dùng cùng Kế Toán Trường, Tổng giám đốc, Ban kiểm soát và Chủ tịch?"
     answer: "Có thể chọn cùng tài khoản nếu đúng danh sách công ty đã xác nhận. Trưởng bộ phận có thể khác giữa các nhân viên. Không mặc định sao chép mọi người phụ trách từ một dòng sang tất cả dòng."
   - question: "Base tự tạo luồng duyệt theo các cấp trên chưa?"
     answer: "Chưa. Base chỉ lưu các tài khoản để biểu mẫu có thể tham chiếu. Còn phải cấu hình từng bước và điều kiện trong Process Design của Approval. Bài kế tiếp chỉ hướng dẫn mẫu một bước theo Person; chưa đặt chính sách duyệt nhiều cấp."
 changes:
+  - date: "2026-10-01"
+    text: "Đổi tên cột ktt thành Kế Toán Trường theo yêu cầu TYG; cập nhật hướng dẫn, ví dụ và ảnh thật trong Base thực hành."
   - date: "2026-10-01"
     text: "Thêm bài trước phần kết nối Approval: 10 cột, phân biệt Text và Person, ví dụ X/A/B/C/D1/D2/E; Ban kiểm soát và Chủ tịch bắt buộc, Ban kiểm soát cho phép nhiều tài khoản theo xác nhận của TYG."
 sources:
@@ -318,7 +320,7 @@ sources:
 | Chức vụ | Text — Văn bản | Nhân viên kinh doanh (ví dụ) |
 | Phòng ban | Text — Văn bản | Phòng kinh doanh (ví dụ) |
 | Trưởng bộ phận | Person — Tài khoản người | Chọn A, người phụ trách trực tiếp của X |
-| ktt | Person — Tài khoản người | Chọn B, Kế toán trưởng của công ty |
+| Kế Toán Trường | Person — Tài khoản người | Chọn B, Kế Toán Trường của công ty |
 | Tổng Giám Đốc | Person — Tài khoản người | Chọn C, Tổng giám đốc của công ty |
 | Ban kiểm soát | Person — cho phép nhiều thành viên | Chọn các tài khoản D1, D2… |
 | Chủ tịch | Person — Tài khoản người | Chọn E, Chủ tịch áp dụng cho công ty |
@@ -329,7 +331,7 @@ sources:
 
 X/A/B/C/D1/D2/E là **ký hiệu giả để giải thích**, không phải tên tài khoản có thể tìm trên Lark. Trong công ty của bạn, thay từng ký hiệu bằng đúng tài khoản thật đã xác nhận.
 
-| Dòng nhân viên | Person | Trưởng bộ phận | ktt | Tổng Giám Đốc | Ban kiểm soát | Chủ tịch |
+| Dòng nhân viên | Person | Trưởng bộ phận | Kế Toán Trường | Tổng Giám Đốc | Ban kiểm soát | Chủ tịch |
 | --- | --- | --- | --- | --- | --- | --- |
 | Nhân viên X | Tài khoản X | Tài khoản A | Tài khoản B | Tài khoản C | Tài khoản D1 và D2… | Tài khoản E |
 
