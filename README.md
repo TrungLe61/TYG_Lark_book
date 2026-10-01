@@ -2,13 +2,15 @@
 
 Website hướng dẫn tiếng Việt bằng ảnh thật, dành cho nhân sự ít quen công nghệ.
 
-Địa chỉ dự kiến sau triển khai: https://trungle61.github.io/TYG_Lark_book/
+Địa chỉ công khai: https://trungle61.github.io/TYG_Lark_book/
 
 ## Bản đầu
 
-Bài mẫu **Kết nối Base nhân viên với Approval** có 16 bước, ảnh đã che thông tin, khung đỏ, hướng dẫn bên cạnh, lỗi thường gặp và nguồn chính thức Lark. Bài mô tả cấu hình mẫu đã khảo sát ngày 01/10/2026: một bước duyệt theo Person, tất cả người được giao cần đồng ý, Auto-approve khi thiếu người duyệt và người gửi vẫn duyệt khi trùng người.
+Bài 01 **Thiết lập Base nhân viên cho công ty** có 32 bước từ tạo Base đến chọn tài khoản nhân viên và các người phụ trách trên cùng dòng. Cấu trúc có 10 cột; Ban kiểm soát và Chủ tịch bắt buộc theo yêu cầu TYG. Ban kiểm soát dùng Person, bật cho phép nhiều thành viên. Họ Tên dùng Text; các cột tài khoản phải dùng Person và bấm chọn đúng kết quả tìm kiếm.
 
-Đây là mốc xem xét bài mẫu trước khi mở rộng cả bộ. Phần tạo Base từ đầu, tạo Approval từ đầu và Attendance chưa được xuất bản. Luồng nhiều cấp cần chủ quy trình xác nhận thứ tự và điều kiện trước khi viết.
+Bài 02 **Kết nối Base nhân viên với Approval** có 16 bước. Bài mô tả cấu hình mẫu đã khảo sát ngày 01/10/2026: một bước duyệt theo Person, tất cả người được giao cần đồng ý, Auto-approve khi thiếu người duyệt và người gửi vẫn duyệt khi trùng người. Mẫu kết nối tham chiếu sáu trường; chưa dùng Ban kiểm soát hoặc Chủ tịch làm cấp duyệt.
+
+Cả hai bài có ảnh thật, khung đỏ, hướng dẫn bên cạnh, lỗi thường gặp và nguồn chính thức Lark. Base thực hành riêng chỉ lưu thông tin chữ giả; các ô tài khoản để trống. Ảnh bộ chọn tài khoản và ảnh đối chiếu Base mẫu đã che danh tính trước khi đưa vào repository. Phần tạo Approval từ đầu và Attendance chưa được xuất bản. Luồng nhiều cấp cần chủ quy trình xác nhận thứ tự và điều kiện trước khi viết.
 
 Khảo sát mẫu không lưu thay đổi biểu mẫu, không Publish và không gửi yêu cầu duyệt thử. Vì vậy chưa xác nhận kết quả chạy thực tế. Không biến cấu hình mẫu thành chính sách mặc định cho các công ty.
 
@@ -44,7 +46,7 @@ Website tĩnh, không backend, không lưu dữ liệu nhân viên, không kết
 ## Kiểm tra trước khi phát hành
 
 1. `npm run build` và `npm run verify` thành công.
-2. Tìm không dấu “nguoi duyet” thấy bài mẫu; từ không có kết quả cho thông báo rõ ràng.
+2. Tìm không dấu “ban kiem soat” thấy bài thiết lập Base; “nguoi duyet” thấy bài kết nối; từ không có kết quả cho thông báo rõ ràng.
 3. Ảnh mở bằng chuột và bàn phím; Esc/Đóng ảnh quay lại đúng bước.
 4. Mục lục mở được trên màn hình điện thoại; không tràn trang theo chiều ngang.
 5. Đọc trực tiếp mọi ảnh đã che; rà lại danh tính, avatar, email, tên tổ chức, QR và đường dẫn nội bộ.

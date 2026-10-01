@@ -4,14 +4,14 @@ import Book from '../layouts/Book.astro';
 import { link } from '../lib/links';
 const guides = (await getCollection('guides')).sort((a,b) => a.data.order - b.data.order);
 ---
-<Book title="Lark, từng bước một" description="Sổ tay Lark bằng hình ảnh cho nhân sự TYG. Bài mẫu đầu tiên: kết nối Base nhân viên với Approval và thiết lập người duyệt.">
+<Book title="Lark, từng bước một" description="Sổ tay Lark bằng hình ảnh cho nhân sự TYG: tạo Base nhân viên, chọn tài khoản và kết nối Approval.">
   <section class="welcome">
     <div class="welcome-copy">
       <span class="topic-label"><span aria-hidden="true">✓</span> Bắt đầu với Approval</span>
       <h1>Lark,<br />từng bước một.</h1>
       <p>Thiết lập quy trình phê duyệt cho công ty bạn. Nhìn hình, làm theo và kiểm tra kết quả.</p>
-      <a class="primary" href={link(`approval/${guides[0]?.id}/`)}>Xem bài mẫu bằng ảnh <span aria-hidden="true">↗</span></a>
-      <p class="muted">Bản đầu dành cho người đã có Base nhân viên và biểu mẫu Approval. Phần tạo mới từ đầu sẽ được bổ sung sau khi đánh giá bài mẫu.</p>
+      <a class="primary" href={link(`approval/${guides[0]?.id}/`)}>Bắt đầu: tạo Base nhân viên <span aria-hidden="true">↗</span></a>
+      <p class="muted">Tạo Base đúng cấu trúc, chọn tài khoản của từng người, rồi kết nối với biểu mẫu Approval. Đã có Base? <a href={link('approval/ket-noi-base/')}>Đến bài kết nối Approval.</a></p>
     </div>
     <div class="welcome-visual">
       <div class="visual-tab"><span>Ảnh hướng dẫn thực tế</span><span>Base → Approval</span></div>
@@ -20,8 +20,8 @@ const guides = (await getCollection('guides')).sort((a,b) => a.data.order - b.da
     </div>
   </section>
   <section class="learning-path" aria-labelledby="path-heading">
-    <div class="section-title"><div><h2 id="path-heading">Bài mẫu đầu tiên</h2><p>Kết nối dữ liệu và thiết lập một bước duyệt theo Person.</p></div><span class="path-count">{guides.length} bài hướng dẫn</span></div>
+    <div class="section-title"><div><h2 id="path-heading">Lộ trình thiết lập Approval</h2><p>Chuẩn bị Base nhân viên trước, kết nối và thiết lập người duyệt sau.</p></div><span class="path-count">{guides.length} bài hướng dẫn</span></div>
     <div class="guide-rows">{guides.map(g => <a class="guide-row" href={link(`approval/${g.id}/`)}><span class="row-number">{String(g.data.order).padStart(2,'0')}</span><div><h3>{g.data.title}</h3><p>{g.data.description}</p></div><span class="row-meta">{g.data.steps.length} bước <span aria-hidden="true">↗</span></span></a>)}</div>
   </section>
-  <section class="how-to-read"><h2>Đọc ít, làm được ngay.</h2><div><p><strong>1. Nhìn khung đỏ</strong><br />Tìm cùng vị trí trên màn hình của bạn.</p><p><strong>2. Làm một thao tác</strong><br />Tên nút tiếng Anh luôn có nghĩa tiếng Việt.</p><p><strong>3. Kiểm tra kết quả</strong><br />Thấy đúng kết quả rồi mới sang bước sau.</p></div><p class="muted">Ảnh đã che thông tin nội bộ. Tên Base trong ảnh được che; hãy chọn Base của công ty bạn.</p></section>
+  <section class="how-to-read"><h2>Đọc ít, làm được ngay.</h2><div><p><strong>1. Nhìn khung đỏ</strong><br />Tìm cùng vị trí trên màn hình của bạn.</p><p><strong>2. Làm một thao tác</strong><br />Tên nút tiếng Anh luôn có nghĩa tiếng Việt.</p><p><strong>3. Kiểm tra kết quả</strong><br />Thấy đúng kết quả rồi mới sang bước sau.</p></div><p class="muted">Ảnh dùng Base thực hành với chữ giả hoặc đã che thông tin nội bộ. Hãy chọn Base và tài khoản đúng của công ty bạn.</p></section>
 </Book>

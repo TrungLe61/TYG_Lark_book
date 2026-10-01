@@ -2,7 +2,7 @@
 title: "Kết nối Base nhân viên với Approval"
 shortTitle: "Kết nối Base với Approval"
 description: "Lấy dữ liệu từ bảng nhân viên và thiết lập một bước duyệt theo trường Person."
-order: 1
+order: 2
 updated: "2026-10-01"
 verified: "2026-10-01"
 keywords: ["phê duyệt", "approval", "base", "nhân viên", "người duyệt", "Person", "Data from Base", "All data", "Auto-approve", "tự duyệt", "kết nối", "quyền", "Publish", "Preview"]
@@ -57,7 +57,7 @@ steps:
     imageWidth: 350
     imageHeight: 320
     alt: "Danh sách trường tham chiếu trong mẫu gồm Person, Chức vụ, Phòng ban, Trưởng bộ phận, ktt và Tổng Giám Đốc"
-    note: "ktt là tên cột trong mẫu. Những cột này chưa tự trở thành các cấp duyệt. Việc chọn người duyệt được làm ở Process Design."
+    note: "ktt là Kế toán trưởng. Base công ty còn cần Ban kiểm soát và Chủ tịch theo bài 01; mẫu kết nối đang tham chiếu sáu trường như ảnh. Các cột tài khoản chưa tự trở thành cấp duyệt. Việc chọn người duyệt được làm ở Process Design."
   - title: "Hiểu phạm vi All data — Tất cả dữ liệu"
     action: "Đọc mục Submitter can select data from — Người gửi có thể chọn dữ liệu từ. Để làm theo cấu hình mẫu, chọn All data."
     value: "All data"
@@ -159,6 +159,8 @@ faqs:
     answer: "Chưa. Cấu hình và nút được khảo sát trong giao diện thật ngày 01/10/2026. Chưa Publish, chưa gửi đơn thử và chưa xác nhận thông báo tới người duyệt."
 changes:
   - date: "2026-10-01"
+    text: "Chuyển thành bài 02, thêm liên kết bài thiết lập Base 10 cột. Làm rõ Ban kiểm soát và Chủ tịch bắt buộc trong Base nhưng chưa dùng làm cấp duyệt trong mẫu một bước hiện tại."
+  - date: "2026-10-01"
     text: "Bài mẫu đầu tiên: kết nối Base, một bước duyệt theo Person, ảnh thật đã che thông tin và đánh dấu vị trí thao tác."
 sources:
   - title: "Tham chiếu dữ liệu từ Base (tiếng Anh)"
@@ -171,8 +173,10 @@ sources:
 
 **Trước khi bắt đầu:** Bạn cần một Base nhân viên có cột **Person** chứa tài khoản Lark và một biểu mẫu Approval thực hành. Người thiết lập cần quyền quản trị Approval và quyền quản lý Base.
 
+Chưa có Base đúng cấu trúc? Làm [bài 01 — Thiết lập Base nhân viên cho công ty](/TYG_Lark_book/approval/thiet-lap-base/) trước. Bài đó hướng dẫn đủ 10 cột, gồm **Ban kiểm soát** cho phép nhiều tài khoản và **Chủ tịch**.
+
 **Bạn sẽ làm được:** nối bảng nhân viên vào biểu mẫu và lấy người duyệt từ **Person** của bản ghi được chọn.
 
-> **Hiểu đúng mẫu:** Đây là luồng một bước duyệt theo Person. Thêm các cột Trưởng bộ phận, ktt, Tổng Giám Đốc vào biểu mẫu chưa tạo thêm các cấp duyệt.
+> **Hiểu đúng mẫu:** Đây là luồng một bước duyệt theo Person. Mẫu kết nối tham chiếu sáu trường; Ban kiểm soát và Chủ tịch vẫn có trong Base công ty nhưng chưa dùng làm cấp duyệt ở mẫu này. Thêm cột hoặc trường tham chiếu chưa tạo thêm cấp duyệt.
 
 Ảnh mô tả cấu hình mẫu đã kiểm tra ngày **01/10/2026**. Mỗi ảnh được cắt gần vị trí thao tác; tên nội bộ đã che. Cấu hình hiển thị trong ảnh là cấu hình mẫu, cần đối chiếu quy định công ty trước khi áp dụng.
