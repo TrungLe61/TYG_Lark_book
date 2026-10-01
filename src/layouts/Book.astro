@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import { link } from '../lib/links';
+import '@fontsource/be-vietnam-pro/400.css';
+import '@fontsource/be-vietnam-pro/500.css';
+import '@fontsource/be-vietnam-pro/600.css';
+import '@fontsource/be-vietnam-pro/700.css';
+import '../styles/book.css';
+
+const { title, description, current = '' } = Astro.props;
+const guides = (await getCollection('guides')).sort((a,b) => a.data.order - b.data.order);
+const search = guides.map(g => ({
+  title: g.data.title,
+  description: g.data.description,
+  href: link(`approval/${g.id}/`),
+  text: [g.data.title, g.data.description, ...g.data.keywords,
+    ...g.data.steps.flatMap(s => [s.title, s.action, s.result, s.value || '', s.note || '']),
+    ...g.data.faqs.flatMap(f => [f.question, f.answer]), g.body].join(' '),
+}));
+---
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title} | TYG · Sổ tay Lark</title>
+    <link rel="icon" href={link('favicon.svg')} type="image/svg+xml" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:title" content={`${title} | Sổ tay Lark TYG`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Đến nội dung hướng dẫn</a>
+    <header class="mobile-head">
+      <a href={link()} class="mobile-brand">TYG <span>Sổ tay Lark</span></a>
+      <button id="menu-toggle" aria-controls="sidebar" aria-expanded="false">Mục lục</button>
+    </header>
+    <aside id="sidebar" class="sidebar">
+      <a href={link()} class="brand" aria-label="TYG Sổ tay Lark — trang chủ">
+        <span class="brand-mark">TYG</span>
+        <span><strong>Sổ tay Lark</strong><small>Cùng làm, từng bước</small></span>
+      </a>
+      <div class="search-box">
+        <label for="search">Bạn đang cần làm gì?</label>
+        <div class="search-input"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Tìm hướng dẫn…" autocomplete="off" /></div>
+        <p class="search-hint">Ví dụ: người duyệt, kết nối Base</p>
+      </div>
+      <nav aria-label="Mục lục sổ tay">
+        <a class:list={['home-link', { active: !current }]} href={link()} aria-current={!current ? 'page' : undefined}>Tổng quan sổ tay</a>
+        <div class="nav-section"><span class="nav-icon" aria-hidden="true">✓</span><strong>Approval</strong><small>Phê duyệt</small></div>
+        <ol class="chapter-list">
+          {guides.map(g => <li><a href={link(`approval/${g.id}/`)} class:list={{active: current === g.id}} aria-current={current === g.id ? 'page' : undefined}><span>{String(g.data.order).padStart(2,'0')}</span>{g.data.shortTitle}</a></li>)}
+        </ol>
+        <div class="upcoming"><span aria-hidden="true">◷</span><div><strong>Attendance</strong><small>Chấm công · Giai đoạn sau</small></div></div>
+      </nav>
+      <div class="sidebar-foot"><span class="status-dot"></span>Ảnh thật, hướng dẫn tiếng Việt<p>Bản đầu · Tháng 10/2026</p></div>
+    </aside>
+    <div class="page">
+      <div class="topbar"><span>Tài liệu dành cho nhân sự TYG</span><a href={link('approval/ket-noi-base/')} class="sample-link">Xem bài mẫu</a></div>
+      <main id="main" tabindex="-1"><slot /></main>
+      <footer class="footer"><span>TYG · Sổ tay Lark</span><p>Làm từng bước. Kiểm tra kết quả trước khi tiếp tục.</p></footer>
+    </div>
+    <section id="search-results" class="search-results" aria-label="Kết quả tìm kiếm" hidden>
+      <div class="search-results-head"><strong>Kết quả tìm kiếm</strong><button id="search-close" aria-label="Đóng kết quả tìm kiếm">Đóng</button></div>
+      <p id="search-count" role="status" aria-live="polite"></p><div id="search-list"></div>
+    </section>
+    <dialog id="image-dialog" aria-label="Ảnh hướng dẫn phóng to">
+      <div class="image-dialog-head"><strong id="image-caption"></strong><button id="image-close">Đóng ảnh</button></div>
+      <p>Cuộn để xem toàn bộ ảnh. Bấm Esc hoặc “Đóng ảnh” để quay lại bước hướng dẫn.</p>
+      <div class="image-scroll"><img id="image-large" alt="" /></div>
+    </dialog>
+    <script type="application/json" id="search-data" set:html={JSON.stringify(search).replace(/</g, '\\u003c')} />
+    <script src="../scripts/book.ts"></script>
+  </body>
+</html>

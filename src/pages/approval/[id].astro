@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from 'astro:content';
+import Book from '../../layouts/Book.astro';
+import { link, dateVN } from '../../lib/links';
+export async function getStaticPaths() {
+  return (await getCollection('guides')).map(guide => ({ params: { id: guide.id }, props: { guide } }));
+}
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+const guides = (await getCollection('guides')).sort((a,b) => a.data.order - b.data.order);
+const index = guides.findIndex(g => g.id === guide.id);
+const previous = guides[index-1];
+const next = guides[index+1];
+const { data } = guide;
+---
+<Book title={data.title} description={data.description} current={guide.id}>
+  <article data-guide={guide.id}>
+    <header class="article-head">
+      <div class="breadcrumb"><a href={link()}>Sổ tay</a><span>/</span><span>Approval</span><span>/</span><span>Bài {data.order}</span></div>
+      <h1>{data.title}</h1><p class="article-description">{data.description}</p>
+      <div class="article-meta"><span>{data.steps.length} bước thực hiện</span><span>Kiểm tra giao diện: {dateVN(data.verified)}</span><span>Cập nhật: {dateVN(data.updated)}</span></div>
+    </header>
+    <div class="article-intro prose"><Content /></div>
+    <nav class="step-nav" aria-label="Các bước trong bài"><strong>Trong bài này</strong><ol>{data.steps.map((s,i)=><li><a href={`#buoc-${i+1}`}><span>{i+1}</span>{s.title}</a></li>)}</ol></nav>
+    <div class="progress-bar"><span>Làm theo từng bước</span><output id="step-count">0/{data.steps.length} bước đã đánh dấu</output></div>
+    <div class="steps">{data.steps.map((step,i)=>
+      <section class="step" id={`buoc-${i+1}`} aria-labelledby={`title-${i+1}`}>
+        <div class="step-heading"><span class="step-number">{String(i+1).padStart(2,'0')}</span><h2 id={`title-${i+1}`}>{step.title}</h2></div>
+        <div class="step-body">
+          <figure><button class="image-button" data-zoom data-caption={`Bước ${i+1}: ${step.title}`} aria-label={`Phóng to ảnh bước ${i+1}: ${step.title}`}><img src={link(`images/${step.image}`)} alt={step.alt} loading="lazy" width="1100" height="700" /></button><figcaption>Ảnh màn hình thật · Bấm ảnh để phóng to</figcaption></figure>
+          <div class="step-instructions"><p class="instruction-label">Bạn làm như sau</p><p>{step.action}</p>{step.value && <div class="input-value"><span>Giá trị cần chọn / nhập</span><strong>{step.value}</strong></div>}<div class="expected"><strong><span aria-hidden="true">✓</span> Kết quả phải thấy</strong><p>{step.result}</p></div>{step.note && <aside class="note"><strong>Lưu ý</strong><p>{step.note}</p></aside>}<label class="done"><input type="checkbox" data-step={i+1} /> Tôi đã làm xong bước này</label></div>
+        </div>
+      </section>
+    )}</div>
+    {data.faqs.length > 0 && <section class="faq-section"><h2>Khi bạn gặp vướng mắc</h2>{data.faqs.map(f=><details class="faq"><summary>{f.question}</summary><p>{f.answer}</p></details>)}</section>}
+    {data.sources.length > 0 && <section class="sources"><h2>Đọc thêm từ Lark</h2><ul>{data.sources.map(s=><li><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}<span class="sr-only"> (mở trong tab mới)</span></a></li>)}</ul></section>}
+    <details class="changes"><summary>Lịch sử cập nhật bài</summary><ul>{data.changes.map(c=><li><time datetime={c.date}>{dateVN(c.date)}</time> — {c.text}</li>)}</ul></details>
+    <nav class="article-pagination" aria-label="Bài trước và bài sau">{previous ? <a href={link(`approval/${previous.id}/`)}><small>Bài trước</small><strong>{previous.data.shortTitle}</strong></a> : <a href={link()}><small>Quay lại</small><strong>Tổng quan sổ tay</strong></a>}{next ? <a href={link(`approval/${next.id}/`)}><small>Bài tiếp theo</small><strong>{next.data.shortTitle}</strong></a> : <a href={link()}><small>Bạn đã đến bài cuối</small><strong>Về mục lục</strong></a>}</nav>
+  </article>
+</Book>
