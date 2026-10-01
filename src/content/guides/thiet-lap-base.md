@@ -105,7 +105,7 @@ steps:
   - title: "Tạo cột Kế Toán Trường bằng Person"
     action: "Bấm dấu +. Nhập Kế Toán Trường ở Field title (khung 1). Chọn Person ở Field type (khung 2), rồi bấm Confirm (khung 3)."
     result: "Có cột Kế Toán Trường với biểu tượng hình người."
-    image: "thiet-lap-base/accountant-field.webp"
+    image: "thiet-lap-base/accountant-field-full.webp"
     imageWidth: 340
     imageHeight: 490
     alt: "Ảnh thật trong Lark, khung đỏ chỉ vị trí thao tác: Tạo cột Kế Toán Trường bằng Person"
@@ -140,7 +140,7 @@ steps:
   - title: "Kiểm tra các cột nhân viên và cấp phụ trách"
     action: "Đối chiếu hàng tiêu đề với bảng 10 cột ở đầu bài. Person, Trưởng bộ phận, Kế Toán Trường và Tổng Giám Đốc phải có biểu tượng hình người."
     result: "Họ Tên, Chức vụ, Phòng ban là chữ; các cột tài khoản là Person."
-    image: "thiet-lap-base/columns-left.webp"
+    image: "thiet-lap-base/columns-left-full.webp"
     imageWidth: 1444
     imageHeight: 90
     alt: "Ảnh thật trong Lark, khung đỏ chỉ vị trí thao tác: Kiểm tra các cột nhân viên và cấp phụ trách"
@@ -223,7 +223,7 @@ steps:
   - title: "Chọn Trưởng bộ phận A cho X"
     action: "Trên DÒNG CỦA X, bấm đúp ô Trưởng bộ phận (khung 1). Tìm tên tài khoản người A trong Search for members (khung 2), rồi bấm kết quả đúng như bước chọn Person."
     result: "Ô Trưởng bộ phận trên dòng X chứa tài khoản A."
-    image: "thiet-lap-base/manager-picker.webp"
+    image: "thiet-lap-base/manager-picker-full.webp"
     imageWidth: 305
     imageHeight: 116
     alt: "Ảnh thật trong Lark, khung đỏ chỉ vị trí thao tác: Chọn Trưởng bộ phận A cho X"
@@ -232,7 +232,7 @@ steps:
   - title: "Chọn Kế Toán Trường B cho X"
     action: "Trên dòng của X, bấm đúp ô Kế Toán Trường (khung 1). Tìm và chọn tài khoản Kế Toán Trường B của công ty (khung 2)."
     result: "Ô Kế Toán Trường trên dòng X chứa tài khoản B."
-    image: "thiet-lap-base/accountant-picker.webp"
+    image: "thiet-lap-base/accountant-picker-full.webp"
     imageWidth: 305
     imageHeight: 116
     alt: "Ảnh thật trong Lark, khung đỏ chỉ vị trí thao tác: Chọn Kế Toán Trường B cho X"
