@@ -28,7 +28,7 @@ Mở đường dẫn `/TYG_Lark_book/` trên địa chỉ máy chủ được in
 ## Cập nhật bài
 
 - Nội dung nằm trong `src/content/guides/*.md`. Phần đầu YAML chứa tiêu đề, thứ tự, ngày kiểm tra, các bước, FAQ và lịch sử cập nhật. Phần sau là đoạn giới thiệu Markdown.
-- Ảnh từng bài nằm ở `public/images/<tên-bài>/`. Trường `image` là đường dẫn tính từ thư mục `public/images/`.
+- Ảnh từng bài nằm ở `public/images/<tên-bài>/`. Trường `image` là đường dẫn tính từ thư mục `public/images/`; `imageWidth` và `imageHeight` là kích thước ảnh thực tế để giữ vị trí mục lục ổn định khi ảnh tải.
 - Mỗi bước chỉ có một thao tác chính; tên nút tiếng Anh kèm nghĩa tiếng Việt. Ghi giá trị phải chọn/nhập và kết quả phải thấy.
 - Chụp đúng giao diện đang dùng. Không tạo lại giao diện Lark bằng AI. Che dữ liệu bằng vùng màu đục trước khi lưu ảnh vào repository; không chỉ phủ CSS, không dùng ảnh gốc trong lịch sử Git.
 - Ảnh gốc, thông tin đăng nhập, đường dẫn Base nội bộ và dữ liệu nhân viên không được commit. Giữ chúng ngoài repository hoặc trong thư mục `private/` đã bỏ qua Git.

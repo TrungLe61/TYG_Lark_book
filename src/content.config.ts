@@ -16,6 +16,8 @@ const guides = defineCollection({
       action: z.string(),
       result: z.string(),
       image: z.string(),
+      imageWidth: z.number().positive(),
+      imageHeight: z.number().positive(),
       alt: z.string(),
       note: z.string().optional(),
       value: z.string().optional(),

@@ -27,7 +27,7 @@ const { data } = guide;
       <section class="step" id={`buoc-${i+1}`} aria-labelledby={`title-${i+1}`}>
         <div class="step-heading"><span class="step-number">{String(i+1).padStart(2,'0')}</span><h2 id={`title-${i+1}`}>{step.title}</h2></div>
         <div class="step-body">
-          <figure><button class="image-button" data-zoom data-caption={`Bước ${i+1}: ${step.title}`} aria-label={`Phóng to ảnh bước ${i+1}: ${step.title}`}><img src={link(`images/${step.image}`)} alt={step.alt} loading="lazy" width="1100" height="700" /></button><figcaption>Ảnh màn hình thật · Bấm ảnh để phóng to</figcaption></figure>
+          <figure><button class="image-button" data-zoom data-caption={`Bước ${i+1}: ${step.title}`} aria-label={`Phóng to ảnh bước ${i+1}: ${step.title}`}><img src={link(`images/${step.image}`)} alt={step.alt} loading="lazy" width={step.imageWidth} height={step.imageHeight} /></button><figcaption>Ảnh màn hình thật · Bấm ảnh để phóng to</figcaption></figure>
           <div class="step-instructions"><p class="instruction-label">Bạn làm như sau</p><p>{step.action}</p>{step.value && <div class="input-value"><span>Giá trị cần chọn / nhập</span><strong>{step.value}</strong></div>}<div class="expected"><strong><span aria-hidden="true">✓</span> Kết quả phải thấy</strong><p>{step.result}</p></div>{step.note && <aside class="note"><strong>Lưu ý</strong><p>{step.note}</p></aside>}<label class="done"><input type="checkbox" data-step={i+1} /> Tôi đã làm xong bước này</label></div>
         </div>
       </section>
