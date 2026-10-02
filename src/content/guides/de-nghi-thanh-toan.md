@@ -364,11 +364,11 @@ sources:
   - title: "Tham chiếu dữ liệu từ Base (tiếng Anh)"
     url: "https://www.larksuite.com/hc/en-US/articles/258688173288-admin-reference-data-from-base"
   - title: "Thiết lập bước người duyệt (tiếng Anh)"
-    url: "https://www.larksuite.com/hc/en-US/articles/360041315273"
-  - title: "Dùng người liên hệ trong biểu mẫu làm người duyệt (tiếng Anh)"
-    url: "https://www.larksuite.com/hc/en-US/articles/698238328326"
-  - title: "Thiết lập nhánh điều kiện (tiếng Anh)"
-    url: "https://www.larksuite.com/hc/en-US/articles/360045140014"
+    url: "https://www.larksuite.com/hc/en-US/articles/360041315273-admin-set-up-an-approver-step"
+  - title: "Quản trị biểu mẫu, luồng duyệt và nhánh điều kiện (tiếng Anh)"
+    url: "https://www.larksuite.com/hc/en-US/articles/953059117412-admin-get-started-with-managing-approval"
+  - title: "Các câu hỏi về Approval và cập nhật quy trình (tiếng Anh)"
+    url: "https://www.larksuite.com/hc/en-US/articles/360046532194-lark-approval-faqs"
 ---
 
 **Bạn đã có Đề nghị thanh toán đang chạy?** Hãy giữ quy trình đó làm điểm xuất phát. Xem [bước 1](#buoc-1), ghi lại người duyệt và các điều kiện; thực hành riêng khi được phép. Nếu biểu mẫu đủ trường, bỏ qua phần đối chiếu 5–18 và đến [kết nối Base nhân viên ở bước 19](#buoc-19). Chỉ sửa phần cần thay đổi.
