@@ -10,9 +10,11 @@ Bài 01 **Thiết lập Base nhân viên cho công ty** có 32 bước từ tạ
 
 Bài 02 **Kết nối Base nhân viên với Approval** có 16 bước. Bài mô tả cấu hình mẫu đã khảo sát ngày 01/10/2026: một bước duyệt theo Person, tất cả người được giao cần đồng ý, Auto-approve khi thiếu người duyệt và người gửi vẫn duyệt khi trùng người. Mẫu kết nối tham chiếu sáu trường; chưa dùng Ban kiểm soát hoặc Chủ tịch làm cấp duyệt.
 
-Cả hai bài có ảnh thật, khung đỏ, hướng dẫn bên cạnh, lỗi thường gặp và nguồn chính thức Lark. Base thực hành riêng chỉ lưu thông tin chữ giả; các ô tài khoản để trống. Ảnh bộ chọn tài khoản và ảnh đối chiếu Base mẫu đã che danh tính trước khi đưa vào repository. Phần tạo Approval từ đầu và Attendance chưa được xuất bản. Luồng nhiều cấp cần chủ quy trình xác nhận thứ tự và điều kiện trước khi viết.
+Bài 03 **Đề nghị thanh toán theo quy trình công ty** có 36 bước. Công ty đã có Approval đối chiếu và cập nhật phần cần thiết; công ty chưa có dùng mẫu tham khảo và chốt các cấp riêng. Người duyệt lấy từ cột Person tương ứng trong Base; người dự phòng do công ty chỉ định. Trên 20.000.000 đồng phải qua Ban kiểm soát (tất cả thành viên đồng ý) rồi Chủ tịch theo xác nhận của TYG. Các cấp phía trước và trường hợp trùng người gửi chưa được coi là chính sách chung.
 
-Khảo sát mẫu không lưu thay đổi biểu mẫu, không Publish và không gửi yêu cầu duyệt thử. Vì vậy chưa xác nhận kết quả chạy thực tế. Không biến cấu hình mẫu thành chính sách mặc định cho các công ty.
+Cả ba bài có ảnh thật, khung đỏ, hướng dẫn bên cạnh, lỗi thường gặp và nguồn chính thức Lark. Base thực hành riêng chỉ lưu thông tin chữ giả; các ô tài khoản để trống. Ảnh bộ chọn tài khoản và ảnh đối chiếu Base mẫu đã che danh tính trước khi đưa vào repository. Attendance chưa được xuất bản. Bài 03 chụp ngưỡng và lựa chọn tất cả đồng ý trên bản sao chưa Publish; phần bộ chọn Base/Contact dùng ảnh đã kiểm tra ở bài 02, có chú thích rõ. Chưa kiểm thử toàn bộ luồng thanh toán lấy từ Base.
+
+Khảo sát biểu mẫu gốc không lưu thay đổi, không Publish và không gửi yêu cầu duyệt thử. Vì vậy chưa xác nhận kết quả chạy thực tế hoặc tác động của cập nhật đối với đơn đang xử lý. Không biến cấu hình mẫu thành chính sách mặc định cho các công ty.
 
 ## Chạy cục bộ
 

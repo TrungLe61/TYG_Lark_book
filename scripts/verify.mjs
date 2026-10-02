@@ -11,7 +11,7 @@ async function filesIn(dir) {
 }
 const files = await filesIn(root);
 const htmlFiles = files.filter(f => f.endsWith('.html'));
-assert(htmlFiles.length >= 4, 'Missing generated guide pages');
+assert(htmlFiles.length >= 5, 'Missing generated guide pages');
 let links = 0, images = 0;
 for (const file of htmlFiles) {
   const html = await readFile(file,'utf8');
@@ -36,5 +36,5 @@ for (const file of htmlFiles) {
     if(tag === 'img') images++;
   }
 }
-assert(images >= 48, 'Missing screenshot-led guides');
+assert(images >= 84, 'Missing screenshot-led guides');
 console.log(`PASS: ${htmlFiles.length} pages, ${links} internal references, ${images} image references; Vietnamese markup, project base paths and private identifiers checked.`);

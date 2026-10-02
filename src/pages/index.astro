@@ -11,7 +11,7 @@ const guides = (await getCollection('guides')).sort((a,b) => a.data.order - b.da
       <h1>Lark,<br />từng bước một.</h1>
       <p>Thiết lập quy trình phê duyệt cho công ty bạn. Nhìn hình, làm theo và kiểm tra kết quả.</p>
       <a class="primary" href={link(`approval/${guides[0]?.id}/`)}>Bắt đầu: tạo Base nhân viên <span aria-hidden="true">↗</span></a>
-      <p class="muted">Tạo Base đúng cấu trúc, chọn tài khoản của từng người, rồi kết nối với biểu mẫu Approval. Đã có Base? <a href={link('approval/ket-noi-base/')}>Đến bài kết nối Approval.</a></p>
+      <p class="muted">Tạo Base đúng cấu trúc, chọn tài khoản của từng người, rồi kết nối với biểu mẫu Approval. Đã có Base? <a href={link('approval/ket-noi-base/')}>Đến bài kết nối Approval.</a> Đã có Đề nghị thanh toán? <a href={link('approval/de-nghi-thanh-toan/')}>Đối chiếu quy trình công ty.</a></p>
     </div>
     <div class="welcome-visual">
       <div class="visual-tab"><span>Ảnh hướng dẫn thực tế</span><span>Base → Approval</span></div>
@@ -20,7 +20,7 @@ const guides = (await getCollection('guides')).sort((a,b) => a.data.order - b.da
     </div>
   </section>
   <section class="learning-path" aria-labelledby="path-heading">
-    <div class="section-title"><div><h2 id="path-heading">Lộ trình thiết lập Approval</h2><p>Chuẩn bị Base nhân viên trước, kết nối và thiết lập người duyệt sau.</p></div><span class="path-count">{guides.length} bài hướng dẫn</span></div>
+    <div class="section-title"><div><h2 id="path-heading">Lộ trình thiết lập Approval</h2><p>Chuẩn bị Base, kết nối người duyệt và đối chiếu Đề nghị thanh toán theo từng công ty.</p></div><span class="path-count">{guides.length} bài hướng dẫn</span></div>
     <div class="guide-rows">{guides.map(g => <a class="guide-row" href={link(`approval/${g.id}/`)}><span class="row-number">{String(g.data.order).padStart(2,'0')}</span><div><h3>{g.data.title}</h3><p>{g.data.description}</p></div><span class="row-meta">{g.data.steps.length} bước <span aria-hidden="true">↗</span></span></a>)}</div>
   </section>
   <section class="how-to-read"><h2>Đọc ít, làm được ngay.</h2><div><p><strong>1. Nhìn khung đỏ</strong><br />Tìm cùng vị trí trên màn hình của bạn.</p><p><strong>2. Làm một thao tác</strong><br />Tên nút tiếng Anh luôn có nghĩa tiếng Việt.</p><p><strong>3. Kiểm tra kết quả</strong><br />Thấy đúng kết quả rồi mới sang bước sau.</p></div><p class="muted">Ảnh dùng Base thực hành với chữ giả hoặc đã che thông tin nội bộ. Hãy chọn Base và tài khoản đúng của công ty bạn.</p></section>
